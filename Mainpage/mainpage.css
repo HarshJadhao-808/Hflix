@@ -101,26 +101,62 @@ nav{
 #search:hover {
   transform: scale(1.1);
 }
-#user_info {
+#signin {
   transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
 
-#user_info:hover {
+#signin:hover {
   transform: scale(1.1);
   filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
 }
 #user{
     border: 3px solid brown;
     height: 40px;
-    width: 50%;
+    width: 200px;
     border-radius: 15px;
     border: 2px solid rgba(245, 198, 28, 1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 10px;
+    
 }
 #coin{
     border: 3px solid brown;
-    height: 40px;
-    width: 50%;
+    height: 46px;
+    width: 140px;
     border-radius: 15px;
     border: 2px solid rgba(245, 198, 28, 1);
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 20px;
+}
+#coin>img{
+  width: 30px;
+}
+
+#down_arrow {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+#down_arrow:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
+}
+
+
+#profile{
+  width: 30px;
+  height:30px;
+  border-radius:50px;
+  /* margin-right: 20px; */
+  
+  
+}
+#downarrow{
+  width: 30px;
+  /* margin-left: 20px; */
 }
