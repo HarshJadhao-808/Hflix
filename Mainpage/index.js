@@ -19,13 +19,14 @@ const default_nav = () => {
 // default_nav()
 
 const buycoin = () => {
+    user_info.innerHTML = "";
     down_arrow.removeEventListener("mouseenter", buycoin);
     coinbuy.style.border = "3px solid rgba(245, 198, 28, 1)";
     let div=document.createElement("div")
     div.innerHTML = `
     <div id=first> 
     <img id="coinbuy_coin" src="../Images/H logo.svg">
-    <h3>${login_amount}</h3>
+    <h3 id="inner_amount">${login_amount}</h3>
     <h3>balance</h3>
     <img id="closecoin" src="../Images/arrow-square-left.svg">
     </div>
@@ -50,12 +51,48 @@ const buycoin = () => {
 
     </div>
     `;
-  
-    
     coinbuy.append(div)
+    let topup = document.getElementById("topup");
+    let enteramount = document.getElementById("enteramount");
+    let closecoin = document.getElementById("closecoin");
+    closecoin.addEventListener("mouseenter",close_coindiv)
+    
+  topup.addEventListener("click",() => {
+      login_amount=enteramount.value
+      inner_amount.innerText=login_amount
+      let buyingoptions = document.getElementById("buyingoptions");
+
+      buyingoptions.addEventListener("click",(event) => {
+          if (event.target.classList.contains("bestbuy")) {
+              let value = event.target.textContent;
+            //   console.log(value);
+              enteramount.value=value
+				}
+
+      })
+    signined_nav()
+    changeorlet(login_amount)
+  })
+  
+
+    
 }
 
+const logoutfun = () => {
+  let logout_space = document.getElementById("logout_space");
+	let div = document.createElement("div")
+  div.setAttribute("id","logout")
+  let logout =document.createElement("img")
+  logout.src="../Images/log_out.png"
+  div.append(logout)
+  logout_space.append(div)
+  div.addEventListener("click",default_nav)
+};
+
+// logoutfun()
+
 const signined_nav = () => {
+    user_info.innerHTML='';
     user_info.style.display="flex"
     user_info.style.gap="15px"
     nav_2.style.width="69%"
@@ -72,7 +109,7 @@ const signined_nav = () => {
     let H_coin = document.createElement("img")
     H_coin.src="../Images/H logo.svg";
     let amount=document.createElement("h3")
-    amount.innerText=login_amount
+    amount.innerText=login_amount 
     let down_arrow=document.createElement("img")
     down_arrow.src = "../Images/arrow-down.svg";
     down_arrow.setAttribute("id","down_arrow")
@@ -100,10 +137,15 @@ const signined_nav = () => {
     let downarrow=document.createElement("img") 
     downarrow.src = "../Images/arrow-down.svg";
     downarrow.setAttribute("id","downarrow")
+    downarrow.addEventListener("mouseenter",logoutfun)
     user.append(profile,info_div,downarrow)
     
     coin.setAttribute("id","coin")
     user_info.append(coin,user)
+
+    const changeorlet=(value) => {
+        amount.innerText=value
+    }
     
 };
 
@@ -113,6 +155,8 @@ signined_nav();
 
 
 const close_coindiv=() =>{
- console.log("hello");
-    
+  coinbuy.style.border="none"
+  coinbuy.innerHTML=" "
+  
 }
+
