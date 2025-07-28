@@ -1,0 +1,87 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+@font-face {
+	font-family: "Cash Display";
+	src: url("../Fonts/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/OTF/ClashDisplay-Bold.otf")
+		format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	background-color: rgba(1, 23, 50, 1);
+	display: flex;
+}
+#image {
+	width: 50%;
+	/* border: 4px solid red; */
+}
+#image > img {
+	width: 100%;
+	height: 730px;
+}
+#chosse_action {
+	/* border: 4px solid red; */
+}
+body :nth-child(2) {
+	/* border: 4px solid green; */
+	width: 100%;
+	padding: 40px 20px;
+}
+#login {
+	width: 100px;
+	height: 50px;
+	padding: 0px 10px;
+	border-radius: 10px;
+	background-color: #f5c61c;
+	color: white;
+	font-size: 20px;
+	font-family: "Cash Display", sans-serif;
+}
+#signup {
+	width: 100px;
+	height: 50px;
+	padding: 0px 10px;
+	border-radius: 10px;
+	color: white;
+	font-size: 20px;
+	font-family: "Cash Display", sans-serif;
+	background-color: transparent;
+	outline: none;
+	border: none;
+}
+#signup:hover {
+	background-color: #f5c61c;
+	cursor: pointer;
+}
+#signin_options {
+	display: flex;
+	justify-content: space-between;
+    width: 500px;
+    border: 2px solid yellow;
+    height: 60px;
+	
+}
+
+#google{
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    background-color:#001127;
+}
+#facebook{
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 60px;
+    background-color:#001127;
+}
+
+

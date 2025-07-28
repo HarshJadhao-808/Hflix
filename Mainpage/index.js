@@ -16,7 +16,7 @@ const default_nav = () => {
 	});
 };
 
-// default_nav()
+default_nav()
 
 const buycoin = () => {
     user_info.innerHTML = "";
@@ -149,7 +149,7 @@ const signined_nav = () => {
     
 };
 
-signined_nav();
+// signined_nav();
 
 // buycoin()
 
